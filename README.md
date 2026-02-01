@@ -139,9 +139,5 @@ Modify `process_frame_for_skills()` in [skillSelection.py](skillSelection.py) to
 - OCR text recognition
 - Skill pattern recognition
 
-## Performance Tips
-
-- Use smaller ROI for better performance
-- Lower FPS if CPU usage is high
-- Close unnecessary applications
-- Use SSD for better I/O performance
+## Recommendations
+- Don't use Elemental Domain rune to avoid false positive detections of the start button
