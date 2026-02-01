@@ -34,42 +34,6 @@ pip install opencv-python numpy mss pygetwindow keyboard pyautogui
 
 ## Usage
 
-### Basic Window Capture
-
-```python
-from window_capture import BlueStacksCapture
-
-# Initialize capture
-capture = BlueStacksCapture()
-
-# Find BlueStacks window
-capture.find_bluestacks_window()
-
-# Capture single frame
-frame = capture.capture_frame()
-
-# Start continuous capture
-capture.start_capture_thread(fps=30)
-
-# Display live stream
-capture.stream_display("Game Stream")
-
-# Stop capture
-capture.stop_capture()
-```
-
-### ROI (Region of Interest) Capture
-
-```python
-# Set ROI using calibrated positions
-top_left = [2405, 368]      # From positions.json
-bottom_right = [2972, 719]  # From positions.json
-
-capture.set_roi(top_left, bottom_right)
-capture.start_capture_thread()
-capture.stream_display("Game ROI")
-```
-
 ### Integration with Skill Selection
 
 The capture functionality is integrated into the skill selection system:
@@ -86,12 +50,13 @@ with open('positions.json', 'r') as f:
 stop_flag = {'stop': False}
 skillSelection(positions, stop_flag)
 ```
+If the calibration file is not being read correctly you can try adding the absolute path to the file instead of what there. found in **main.py** file. 
 
 ## Controls
-
+⚠️⚠️⚠️⚠️
+IMPORTANT
+⚠️⚠️⚠️⚠️
 - **Q**: Quit/stop stream
-- **S**: Save current frame as PNG
-- **C**: Save screenshot (in skill selection mode)
 
 ## File Structure
 
@@ -116,31 +81,5 @@ skillSelection(positions, stop_flag)
    - Make sure OpenCV is installed: `pip install opencv-python`
    - Check if display drivers are working
 
-## Customization
-
-### Adjust Capture Settings
-
-```python
-# Change FPS
-capture.start_capture_thread(fps=15)  # Lower for better performance
-
-# Scale display
-capture.stream_display("Stream", scale_factor=0.5)  # 50% size
-
-# Larger frame buffer
-capture.frame_queue = queue.Queue(maxsize=60)  # 60 frame buffer
-```
-After runnig the calibration, quit the program finish the run and then start it again from the home screen. The farming should then begin by itself. 
-
-Press the key 'q' on the keyboard while in the terminal where the program was launched to quit the program
-
-### Add Custom Processing
-
-Modify `process_frame_for_skills()` in [skillSelection.py](skillSelection.py) to add:
-- Color detection
-- Template matching
-- OCR text recognition
-- Skill pattern recognition
-
 ## Recommendations
-- Don't use Elemental Domain rune to avoid false positive detections of the start button
+- Don't use Elemental Domain rune to avoid false positive detections of the start buttons
