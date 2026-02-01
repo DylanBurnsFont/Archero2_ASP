@@ -130,6 +130,9 @@ capture.stream_display("Stream", scale_factor=0.5)  # 50% size
 # Larger frame buffer
 capture.frame_queue = queue.Queue(maxsize=60)  # 60 frame buffer
 ```
+After runnig the calibration, quit the program finish the run and then start it again from the home screen. The farming should then begin by itself. 
+
+Press the key 'q' on the keyboard while in the terminal where the program was launched to quit the program
 
 ### Add Custom Processing
 
