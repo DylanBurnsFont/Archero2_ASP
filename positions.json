@@ -1,0 +1,34 @@
+{
+    "top-left": [
+        2644,
+        41
+    ],
+    "bottom-right": [
+        3196,
+        1022
+    ],
+    "start-tl": [
+        2791,
+        779
+    ],
+    "start-br": [
+        3047,
+        874
+    ],
+    "skill-area-tl": [
+        2653,
+        330
+    ],
+    "skill-area-br": [
+        3179,
+        719
+    ],
+    "carousel-tl": [
+        2773,
+        817
+    ],
+    "carousel-br": [
+        3060,
+        926
+    ]
+}
